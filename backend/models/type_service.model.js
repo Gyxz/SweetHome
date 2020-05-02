@@ -11,12 +11,13 @@ const type_serviceSchema = new Schema({
     minlength: 3
   },
     description:{type: String,required: true,},
+    price:{type: Number,required: true,},
     id_service:{type: String,required: true,},
   
 }, {
   timestamps: true,
 });
 
-const type_service = mongoose.model('Service', type_serviceSchema);
+const type_service = mongoose.model('Type_service', type_serviceSchema);
 
 module.exports = type_service;
