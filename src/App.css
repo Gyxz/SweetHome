@@ -50,11 +50,16 @@ body {
 #page-wrap {
   text-align: center;
   overflow: auto;
+} 
+
+div {
+  display: block;
 }
 
 
 body {
   padding-top: 90px;
+  
 }
 
 @media (min-width: 768px) {
@@ -80,10 +85,12 @@ body {
 @media (min-width: 768px) {
   .navbar.fixed-left {
     bottom: 0;
-    width: 232px;
+    width: 190px;
     flex-flow: column nowrap;
-    align-items: flex-start;
+    align-items: center; 
+    
   }
+
   .navbar.fixed-left .navbar-collapse {
     flex-grow: 0;
     flex-direction: column;
@@ -92,9 +99,13 @@ body {
   .navbar.fixed-left .navbar-collapse .navbar-nav {
     flex-direction: column;
     width: 100%;
+    position: absolute;
+    top: 35%;
+    align-items: center;
   }
   .navbar.fixed-left .navbar-collapse .navbar-nav .nav-item {
     width: 100%;
+   
   }
   .navbar.fixed-left .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
     top: 0;
@@ -115,4 +126,79 @@ body {
   .navbar.fixed-left .navbar-nav .nav-item .dropdown-menu {
     left: 100%;
   }
+}
+
+.contact_block{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 80px;
+}
+.contact_block .phone_block{
+  margin-bottom: 20px;
+  margin-left: 30px;
+  color: rgb(173, 189, 201);
+}
+.contact_block .email_block{
+  width: 100%;
+  text-align: center;
+  color: rgb(173, 189, 201);
+}
+
+.page_wrapper {
+  width: 100%;
+  min-height: 100vh;
+  float: left;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bg_image{
+  background-color: rgb(74, 73, 100);
+}
+
+@media screen and (max-width: 1400px){
+.content_wrapper.content {
+    padding-right: 60px;
+}
+}
+
+.content_wrapper.content {
+    padding-top: 90px;
+    padding-right: 300px;
+}
+
+@media screen and (max-width: 1400px){
+.content_wrapper {
+    padding-left: 330px;
+}
+}
+
+.content_wrapper{
+  width: 100%;
+  float: left;
+  padding-left: 250px;
+}
+
+.content_wrapper.content .text_block{
+  width: 100%;
+  padding-bottom: 30px;
+  text-align: left;
+}
+
+.content_wrapper.content p {
+  font-weight: 300;
+  line-height: 25px;
+  font-size: 16px;
+  color: #FFF;
+}
+
+.content_wrapper.content h2 {
+  font-weight: 700;
+  line-height: 37px;
+  font-size: 28px;
+  color: #FFF;
+  margin-bottom: 13px;
 }
