@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 export default class Sidebar extends Component {
   render() {
     return (
-    <nav className="navbar navbar-dark bg-dark navbar-expand-md fixed-left">
+        
+    <nav className="navbar navbar-dark bg-dark navbar-expand-md fixed-left box">
         <Link to="/" className="navbar-brand">SweetHome</Link>
         <div className="collpase navbar-collapse">
             <ul className="navbar-nav mr-auto">
