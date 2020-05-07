@@ -12,10 +12,10 @@ export default class Sidebar extends Component {
                     <Link to="/" className="nav-link">Головна</Link>
                 </li>
                 <li className="navbar-item">
-                    <Link to="/" className="nav-link">Послуги</Link>
+                    <Link to="/service" className="nav-link">Послуги</Link>
                 </li>
                 <li className="navbar-item">
-                    <Link to="/" className="nav-link">Майстри</Link>
+                    <Link to="/craftsman" className="nav-link">Майстри</Link>
                 </li>
                 <li className="navbar-item">
                     <Link to="/" className="nav-link">Контакти</Link>
