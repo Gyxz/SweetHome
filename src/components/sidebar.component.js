@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+
+
+
 export default class Sidebar extends Component {
   render() {
     return (
@@ -9,7 +12,8 @@ export default class Sidebar extends Component {
         <div className="collpase navbar-collapse">
             <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
-                    <Link to="/" className="nav-link">Головна</Link>
+                    {/* <Link to="/" className="nav-link" >Головна</Link> */}
+                    <a href="/" className="nav-link">Головна</a>
                 </li>
                 <li className="navbar-item">
                     <Link to="/service" className="nav-link">Послуги</Link>

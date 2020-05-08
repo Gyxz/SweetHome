@@ -7,12 +7,17 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
   s.src = 'https://http-localhost-3000-ojsh2jkzav.disqus.com/embed.js';
   s.setAttribute('data-timestamp', +new Date());
   (d.head || d.body).appendChild(s);
+  
 })();
 
+
 export default class Home extends Component {
+ 
+  
   render() {
     return (
-       <div className="page_wrapper box">
+     
+       <div className="page_wrapper box" >
         <div className="content_wrapper content">
           <div className="text_block">
             <h2>Якісний ремонт квартир у Львові від компанії “Sweethome”</h2>
@@ -27,7 +32,7 @@ export default class Home extends Component {
             <h2>Наші клієнти кажуть:</h2>
             <div id="disqus_thread"></div>
             
-          
+
             {/* <Carousel autoPlay infiniteLoop>
               <div className="block">
                 <p className="feedback_text">hfghkjhgkhkghfghkjhgk

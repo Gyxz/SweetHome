@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card'
 
 const Service = props => (
 
-
     <Col lg={6} md={8} xs={24}>
         <Card border="dark" style={{ width: '18rem' }}>
             <Card.Header>{props.service.servicename}</Card.Header>
