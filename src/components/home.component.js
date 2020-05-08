@@ -2,6 +2,13 @@ import React, {Component} from 'react';
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+(function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://http-localhost-3000-ojsh2jkzav.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+
 export default class Home extends Component {
   render() {
     return (
@@ -18,7 +25,10 @@ export default class Home extends Component {
           </div>
           <div className="feedback_block">
             <h2>Наші клієнти кажуть:</h2>
-            <Carousel autoPlay infiniteLoop>
+            <div id="disqus_thread"></div>
+            
+          
+            {/* <Carousel autoPlay infiniteLoop>
               <div className="block">
                 <p className="feedback_text">hfghkjhgkhkghfghkjhgk
                 hkghkhgkhgdhfghk
@@ -33,7 +43,7 @@ export default class Home extends Component {
                 <p className="feedback_text">hfdhfd</p>
                 <h6>fdhfd</h6>
               </div>
-            </Carousel>
+            </Carousel> */}
           </div>
         </div>
        </div>
