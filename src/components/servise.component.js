@@ -8,8 +8,8 @@ const Service = props => (
     <Col lg={6} md={8} xs={24}>
         <Card border="dark" style={{ width: '18rem' }}>
             <Card.Header>{props.service.servicename}</Card.Header>
-            <Card.Body hoverable={true}>
-                <Card.Title> {props.service.craftsman_name} </Card.Title>
+            <Card.Body>
+                <Card.Title> {props.service.type_service[3].type_service_name} </Card.Title>
                 <Card.Text>
                     
                 </Card.Text>
@@ -24,13 +24,14 @@ export default class ServiceList extends Component {
     constructor(props){
         super(props);
 
-        this.state = {services: []};
+        this.state = {services: [],type_service: []};
     }
 
     componentDidMount(){
         axios.get('http://localhost:5000/service/')
             .then(res =>{
                 this.setState({services: res.data})
+                this.setState({type_service: res.data})
             })
             .catch((error) => {
                 console.log(error);
@@ -46,15 +47,18 @@ export default class ServiceList extends Component {
 
   render() {
     return (
-        <div style={{ width: '75%', margin: '3rem auto' }}>
-            <div style={{ textAlign: 'center' }}>
-                <h2>  Ми виконуємо такі види робіт:  </h2>
-            </div>
-                <div >
-                    <Row gutter={[16, 16]}>
-                        {this.serviceList()}
-                    </Row>
+        <div className="page_wrapper box">
+            <div className="content_wrapper content">
+                <div className="services">
+                    <h2>  Ми виконуємо такі види робіт:  </h2>
+                
+                    <div >
+                        <Row gutter={[16, 16]}>
+                            {this.serviceList()}
+                        </Row>
+                    </div>
                 </div>
+            </div>
         </div>
     );
   }

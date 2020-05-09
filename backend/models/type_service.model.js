@@ -10,7 +10,6 @@ const type_serviceSchema = new Schema({
     trim: true,
     minlength: 3
   },
-    description:{type: String,required: true,},
     price:{type: Number,required: true,},
     id_service:{type: String,required: true,},
   

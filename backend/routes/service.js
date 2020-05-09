@@ -10,10 +10,13 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
   const servicename = req.body.servicename;
   const craftsman_name = req.body.craftsman_name;
-  
+  const type_service = req.body.type_service;
+
   const newservice = new Service({
     servicename,
     craftsman_name,
+    type_service
+    
   });
 
   newservice.save()
@@ -38,7 +41,8 @@ router.route('/update/:id').post((req, res) => {
     .then(service => {
         service.servicename = req.body.servicename;
         service.craftsman_name = req.body.craftsman_name;
-
+        service.type_service = req.body.type_service;
+        
         service.save()
         .then(() => res.json('Service updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
