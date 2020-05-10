@@ -2,41 +2,49 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import {  Col, Row } from 'antd';
 import Card from 'react-bootstrap/Card'
-
+import ListGroup from 'react-bootstrap/ListGroup'
 function UserCardBlock(props) {
 
         const renderItems = () => (
             props.products && props.products.map(item => (
-                <div key={item._id}>
-                    <p>Type_service_name: {item.type_service_name}</p>
-                    <p>Price: {item.price}</p>
-                </div>
+                <ListGroup.Item>
+                    <div>
+                        {item.type_service_name}
+                    </div>
+                    <div>
+                      Середня ціна: {item.price} грн.
+                    </div>
+                </ListGroup.Item>
             ))
         )
         return (
             <div>
-                
-                {renderItems()}
-                    
-            </div>
+                {renderItems()}   
+            </div>  
         )
     }
-const Service = props => (
 
-    <Col lg={6} md={8} xs={24}>
+    
+function Service (props) {
+   
+    const renderItems = () => (
+        
         <Card border="dark" style={{ width: '18rem' }}>
-            <Card.Header>{props.service.servicename}</Card.Header>
-            <Card.Body>
-                <Card.Title> {props.service.type_service.price} </Card.Title>
-                <Card.Text>
-                    <UserCardBlock products={props.service.type_service}/>
-                </Card.Text>
-            </Card.Body>
+            <Card.Header><b>{props.service.servicename}</b></Card.Header>
+            <ListGroup variant="flush">
+                <UserCardBlock products={props.service.type_service}/>
+            </ListGroup>
         </Card>
 
-    </Col>
+        
+    )
+    return (
+        <Col lg={6} md={8} xs={24}>
+            {renderItems()}   
+        </Col>
+    )
     
-  )
+}
   
 
 export default class ServiceList extends Component {
@@ -44,15 +52,17 @@ export default class ServiceList extends Component {
         super(props);
 
         this.state = {services: []};
+        
     }
-
-    renderItems() {
-        return this.state.type_service.map(item => (
-          <div key={item._id}>
-            <p>Type_service_name: {item.type_service_name}</p>
-            <p>Price: {item.price}</p>
-          </div>
-        ));
+    handleClickOutside(){
+        this.setState({
+          listOpen: false
+        })
+      }
+      toggleList(){
+        this.setState(prevState => ({
+          listOpen: !prevState.listOpen
+        }))
       }
 
     componentDidMount(){
@@ -73,6 +83,7 @@ export default class ServiceList extends Component {
         })
       }
 
+
   render() {
     return (
         <div className="page_wrapper box">
@@ -80,10 +91,32 @@ export default class ServiceList extends Component {
                 <div className="services">
                     <h2>  Ми виконуємо такі види робіт:  </h2>
                 
-                    <div >
-                        <Row gutter={[16, 16]}>
-                            {this.serviceList()}
-                        </Row>
+                    <Row gutter={[16, 16]}>
+                        {this.serviceList()}
+                    </Row>
+                </div>
+                <div className="contact_form">
+                    <h2>Залишіть заявку і ми з вами зв’яжемось!</h2>
+                    <div style={{display: "flex",flexFlow:"row wrap"}}>
+                        <form style={{width: "30%"}}>
+                        <div className="form-group"> 
+                            <input  type="text"
+                                required
+                                placeholder="Ваше ім'я"
+                                className="form-control"
+                                />
+                        </div>
+                        </form>
+                        <form style={{width: "30%"}}>
+                        <div className="form-group"> 
+                            <input  type="text"
+                                required
+                                placeholder="Ваше ім'я"
+                                className="form-control"
+                                />
+                        </div>
+                        </form>
+                        <button className="form_button">Надіслати заявку</button>
                     </div>
                 </div>
             </div>
