@@ -29,7 +29,7 @@ export default class Sidebar extends Component {
                     <Link to="/craftsman" className="nav-link">Майстри</Link>
                 </li>
                 <li className="navbar-item">
-                    <Link to="/" className="nav-link">Контакти</Link>
+                    <Link to="/contact" className="nav-link">Контакти</Link>
                 </li>
             </ul>
         </div>

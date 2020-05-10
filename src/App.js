@@ -7,6 +7,7 @@ import Sidebar from "./components/sidebar.component";
 import Home from "./components/home.component";
 import ServiceList from "./components/servise.component";
 import CraftsmanList from "./components/craftsman.component";
+import ContactList from "./components/contact.component";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/service" exact component={ServiceList} />
         <Route path="/craftsman" exact component={CraftsmanList} />
+        <Route path="/contact" exact component={ContactList} />
       </div>
       
     </Router>
