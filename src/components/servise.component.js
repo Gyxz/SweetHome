@@ -3,6 +3,9 @@ import axios from 'axios'
 import {  Col, Row } from 'antd';
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
+
+import Popup from './popup.component';  
+
 function UserCardBlock(props) {
 
         const renderItems = () => (
@@ -51,19 +54,13 @@ export default class ServiceList extends Component {
     constructor(props){
         super(props);
 
-        this.state = {services: []};
-        
+        this.state = {services: [], showPopup: false};
     }
-    handleClickOutside(){
-        this.setState({
-          listOpen: false
-        })
-      }
-      toggleList(){
-        this.setState(prevState => ({
-          listOpen: !prevState.listOpen
-        }))
-      }
+      togglePopup() {  
+        this.setState({  
+             showPopup: !this.state.showPopup  
+        });  
+         } 
 
     componentDidMount(){
         axios.get('http://localhost:5000/service/')
@@ -111,12 +108,20 @@ export default class ServiceList extends Component {
                         <div className="form-group"> 
                             <input  type="text"
                                 required
-                                placeholder="Ваше ім'я"
+                                placeholder="Ваше телефон"
                                 className="form-control"
                                 />
                         </div>
                         </form>
-                        <button className="form_button">Надіслати заявку</button>
+                        <button className="form_button" onClick={this.togglePopup.bind(this)}> Надіслати заявку</button> 
+                        {this.state.showPopup ?  
+                        <Popup  
+                                text='Ваша заявка успішно надіслана!'  
+                                closePopup={this.togglePopup.bind(this)}  
+                        />  
+                        : null  
+                        }  
+                        {/* <button className="form_button">Надіслати заявку</button> */}
                     </div>
                 </div>
             </div>
