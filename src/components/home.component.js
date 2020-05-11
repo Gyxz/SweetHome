@@ -18,7 +18,7 @@ export default class Home extends Component {
     return (
      
        <div className="page_wrapper box" >
-        <div className="content_wrapper content">
+        <div className="content_wrapper content" style={{paddingRight:"200px"}}>
           <div className="text_block">
             <h2>Якісний ремонт квартир у Львові від компанії “Sweethome”</h2>
             <p>

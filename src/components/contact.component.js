@@ -5,7 +5,7 @@ export default class Contact extends Component {
     render() {
       return (
         <div className="page_wrapper box" >
-            <div className="content_wrapper content">
+            <div className="content_wrapper content" style={{paddingRight:"200px"}}>
                 <div className="col_row">
                     <div className="col_c">
                         <div className="contact_block">
