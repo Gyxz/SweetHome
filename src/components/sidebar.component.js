@@ -33,7 +33,7 @@ export default class Sidebar extends Component {
                 </li>
             </ul>
         </div>
-        <div className="contact_block">
+        <div className="contact_block_side">
             <div className="phone_block">
                 <p className=""> 
                     <svg class="bi bi-phone" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -95,7 +95,7 @@ export default class ServiceList extends Component {
                         {this.serviceList()}
                     </Row>
                 </div>
-                <div className="contact_form">
+                <div className="contact_form_serv">
                     <h2>Залишіть заявку і ми з вами зв’яжемось!</h2>
                     <div style={{display: "flex",flexFlow:"row wrap"}}>
                         <form style={{width: "30%"}}>

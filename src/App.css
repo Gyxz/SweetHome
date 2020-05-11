@@ -128,18 +128,18 @@ body {
   }
 }
 
-.contact_block{
+.contact_block_side{
   position: absolute;
   width: 100%;
   left: 0;
   bottom: 80px;
 }
-.contact_block .phone_block{
+.contact_block_side .phone_block{
   margin-bottom: 20px;
   margin-left: 30px;
   color: rgb(173, 189, 201);
 }
-.contact_block .email_block{
+.contact_block_side .email_block{
   width: 100%;
   text-align: center;
   color: rgb(173, 189, 201);
@@ -347,19 +347,19 @@ svg {
     position: fixed;
 }
 
-.content_wrapper.content .contact_form {
+.content_wrapper.content .contact_form_serv {
   padding: 15px 0 40px;
 }
 
-.content_wrapper.content .contact_form h2 {
+.content_wrapper.content .contact_form_serv h2 {
   margin-bottom: 35px;
   text-align: left;
 }
 
-.content_wrapper.content .contact_form .form-group {
+.content_wrapper.content .contact_form_serv .form-group {
   margin-left: 20px;
 }
-.content_wrapper.content .contact_form .form_button{
+.content_wrapper.content .contact_form_serv .form_button{
   margin-left: 30px;
   height: 40px;
   border-radius: .25rem;
@@ -385,7 +385,10 @@ svg {
   box-shadow: 0 7px 15px rgba(0,0,0,.25);
   margin-top: 80px;
   margin-bottom: 60px;
-  border-right: 4px solid #FDBF31;
+  border-right: 4px solid red;
+  border-bottom: 4px solid red;
+  max-width: max-content;
+  text-align: left;
 }
 
 .content_wrapper.content .contact_block h3 {
@@ -398,7 +401,6 @@ svg {
 }
 .content_wrapper.content .contact_block .phone_block {
   margin: 0 0 40px;
-  padding-left: 37px;
   position: relative;
 }
 
@@ -408,35 +410,16 @@ svg {
   font-size: 23px;
   color: #282828;
   text-decoration: none;
+  margin-left: 5px;
+  display: inline-flex;
 }
 
 .content_wrapper.content .contact_block .email_block {
   margin: 0 0 40px;
   position: relative;
-  padding-left: 37px;
+  
 }
 
-.content_wrapper.content .contact_block .timetable_block {
-  margin: 0 0 70px;
-  position: relative;
-  padding-left: 37px;
-}
-
-.content_wrapper.content .contact_block .timetable_block {
-  margin: 0 0 70px;
-  position: relative;
-  padding-left: 37px;
-}
-
-.content_wrapper.content .contact_block .timetable_block span {
-  font-weight: 400;
-  line-height: normal;
-  font-size: 23px;
-  color: #282828;
-  margin-right: 50px;
-  clear: both;
-  display: block;
-}
 
 @media screen and (max-width: 1400px){
 .content_wrapper.content .contact_form.full {
@@ -459,4 +442,20 @@ svg {
 
 .content__wrapper.content .contact__form h2 {
   margin-bottom: 35px;
+}
+
+.content_wrapper.content .contact_block .social .social_links {
+  width: 100%;
+  display: block;
+  margin-bottom: 35px;
+}
+
+.content_wrapper.content .contact_block .social .social_links a {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  margin-right: 23px;
+  background-position: center;
+  background-size: cover;
+  transition: all .8s ease;
 }
