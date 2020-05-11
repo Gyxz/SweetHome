@@ -10,13 +10,6 @@ const serviceSchema = new Schema({
     trim: true,
     minlength: 3
   },
-  craftsman_name: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    minlength: 3
-  },
   type_service:[{
     type_service_name:{type: String,required: true,},
     price:{type: Number,required: true,},

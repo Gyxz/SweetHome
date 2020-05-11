@@ -9,12 +9,10 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
   const servicename = req.body.servicename;
-  const craftsman_name = req.body.craftsman_name;
   const type_service = req.body.type_service;
 
   const newservice = new Service({
     servicename,
-    craftsman_name,
     type_service
     
   });
@@ -40,7 +38,6 @@ router.route('/update/:id').post((req, res) => {
     Service.findById(req.params.id)
     .then(service => {
         service.servicename = req.body.servicename;
-        service.craftsman_name = req.body.craftsman_name;
         service.type_service = req.body.type_service;
         
         service.save()
