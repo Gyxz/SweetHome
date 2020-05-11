@@ -3,27 +3,33 @@ import axios from 'axios'
 import {  Col, Row } from 'antd';
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
-
+import { Carousel } from "react-responsive-carousel";
 import Popup from './popup.component';  
 
-function UserCardBlock(props) {
+function InfoBlock(props) {
 
         const renderItems = () => (
             props.products && props.products.map(item => (
-                <ListGroup.Item>
-                    <div>
-                        {item.type_service_name}
-                    </div>
-                    <div>
-                      Середня ціна: {item.price} грн.
-                    </div>
-                </ListGroup.Item>
+                
+                <div className="block">
+                    <p className="info_text"><b>{item.type_service_name} </b></p>
+                    <h6>Середня ціна: {item.price} грн.</h6>
+                </div>
+                
+                // <ListGroup.Item>
+                //     <div>
+                //         {item.type_service_name}
+                //     </div>
+                //     <div>
+                //       Середня ціна: {item.price} грн.
+                //     </div>
+                // </ListGroup.Item>
             ))
         )
         return (
-            <div>
+            <Carousel autoPlay infiniteLoop>
                 {renderItems()}   
-            </div>  
+            </Carousel> 
         )
     }
 
@@ -32,19 +38,28 @@ function Service (props) {
    
     const renderItems = () => (
         
-        <Card border="dark" style={{ width: '18rem' }}>
+             
+                <Col lg={3} md={4} xs={12}>
+                    <div className="service_block">
+                        <div className="service_block_name"><h4>{props.service.servicename}</h4></div>
+                        <InfoBlock products={props.service.type_service}/>
+                    </div>
+                </Col>
+           
+        
+         /* <Card border="dark" style={{ width: '18rem' }}>
             <Card.Header><b>{props.service.servicename}</b></Card.Header>
             <ListGroup variant="flush">
-                <UserCardBlock products={props.service.type_service}/>
+                <InfoBlock products={props.service.type_service}/>
             </ListGroup>
-        </Card>
-
+        </Card> */ 
+        
         
     )
     return (
-        <Col lg={6} md={8} xs={24}>
+        <Row gutter={[8, 8]}>
             {renderItems()}   
-        </Col>
+        </Row>
     )
     
 }
@@ -87,10 +102,10 @@ export default class ServiceList extends Component {
             <div className="content_wrapper content">
                 <div className="services">
                     <h2>  Ми виконуємо такі види робіт:  </h2>
-                
-                    <Row gutter={[16, 16]}>
+                    {this.serviceList()}
+                     {/* <Row gutter={[8, 8]}>
                         {this.serviceList()}
-                    </Row>
+                    </Row> */}
                 </div>
                 <div className="contact_form_serv">
                     <h2>Залишіть заявку і ми з вами зв’яжемось!</h2>

@@ -216,24 +216,6 @@ body {
   max-width: 700px;
 }
 
-.content_wrapper.content .feedback_block .block{
-  width: 100%;
-  min-height: 170px;
-  padding: 38px 50px 31px;
-  position: relative;
-  background-color: white;
-  border-bottom:40px solid gray ;
-  text-align: left;
-  
-}
-.content_wrapper.content .feedback_block .block .feedback_text{
-  color: black;
-  margin-bottom: 9px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 22px;
-  font-size: 14px;
-}
 
 /* .page_wrapper.service_box{
   background: linear-gradient(to right, #343a40, gray);
@@ -300,52 +282,46 @@ svg {
   text-align: left;
 }
 
-@media screen and (max-width: 1600px){
-.content_wrapper.content .services .services_row .service_block {
-    width: 190px;
-    height: 190px;
-    margin: 12px 12px 0 0;
-}}
 
-.content_wrapper.content .services .services_row .service_block {
-    width: 230px;
-    height: 230px;
-    margin: 12px 27px 0 0;
-    display: inline-flex;
-    background: rgba(255,255,255,.05);
-    
-    box-sizing: border-box;
-    
-    color: #FFF;
-    position: relative;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
+.content_wrapper.content .services .service_block{
+  max-width: 35%;
 }
 
-.content_wrapper.content .services .services_row .service_block .block {
-  position: absolute;
+.content_wrapper.content .services .service_block .service_block_name{
+  background: rgb(219, 69, 69, 0.8);
+
+}
+
+.content_wrapper.content .services .service_block .service_block_name h4{
+  color:white;
+  margin-bottom: 5px;
+}
+
+.content_wrapper.content .services .block{
   width: 100%;
-  top: 12%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  min-height: 200px;
+  padding: 38px 50px 31px;
+  position: relative;
+  background-color: white;
+  border-bottom:40px solid gray ;
+  text-align: left;
   
 }
-
-.content_wrapper.content .services .services_row .service_block .block h6 {
-  font-weight: 400;
-  line-height: 23px;
-  font-size: 16px;
-  
+.content_wrapper.content .services .block .info_text{
+  color: black;
+  margin-bottom: 9px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 22px;
+  font-size: 20px;
 }
 
-.content_wrapper.content .services .services_row .service_block .block .item_header {
-  padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0,0,0,.03);
-    border-bottom: 1px solid rgba(0,0,0,.125);
-    position: fixed;
+.content_wrapper.content .services .block h6{
+  color: black;
+  font-style: italic;
+  font-size: 15px;
 }
+
 
 .content_wrapper.content .contact_form_serv {
   padding: 15px 0 40px;
@@ -460,26 +436,59 @@ svg {
   transition: all .8s ease;
 }
 
+@keyframes popup_frame{
+  from {top: -100%;}
+  to {top: -10%;}
+}
+
+
 .popup {  
   position: fixed;  
   width: 100%;  
-  height: 100%;  
-  top: 0;  
+  height: 100%;   
+  top:-10%;
   left: 0;  
   right: 0;  
   bottom: 0;  
   margin: auto;  
-  background-color: rgba(255, 255, 255, 0.5);  
-  
+  background-color: rgba(255, 255, 255, 0.6);  
+  background:linear-gradient(rgba(250,0,0,1),transparent);
+  animation: popup_frame 1s;
+
 }  
+
+
 .popup .popup_inner {  
   position: absolute;  
-  left: 25%;  
-  right: 25%;  
-  top: 25%;  
-  bottom: 25%;  
+  left: 35%;  
+  right: 35%;  
+  top: 35%;  
+  bottom: 35%;  
   margin: auto;  
   border-radius: 20px;  
-  background: white;  
+  background:linear-gradient(rgba(250,0,0,1),transparent);
+  background-color:black;
+}
+
+.popup .popup_inner h1{
+  margin-top: 10%;
+  color:white;
+}
+
+.popup .popup_inner .popup_button{
+  border-radius: 12px;
+  font-size: 30px;
+  transition-duration: 0.4s;
+  background-color: black;
+  background:linear-gradient(rgba(155, 6, 6, 0.5),transparent);
+  color: white;
+  border: 2px solid red;
+  margin-top: 5%;
   
 }
+
+.popup .popup_inner .popup_button:hover{
+  background-color: white;
+  color: black;
+}
+
