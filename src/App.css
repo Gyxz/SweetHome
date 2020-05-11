@@ -164,7 +164,7 @@ body {
 
 .content_wrapper.content {
     padding-top: 90px;
-    padding-right: 300px;
+    padding-right: 10px;
 }
 
 @media screen and (max-width: 1400px){
@@ -178,6 +178,7 @@ body {
   float: left;
   padding-left: 250px;
 }
+
 
 .content_wrapper.content .text_block{
   width: 100%;
@@ -283,8 +284,10 @@ svg {
 }
 
 
-.content_wrapper.content .services .service_block{
-  max-width: 35%;
+.content_wrapper.content .services .service_row .service_block{
+  width: 500px;
+  float: left;
+  margin-right: 10px;
 }
 
 .content_wrapper.content .services .service_block .service_block_name{
@@ -300,7 +303,7 @@ svg {
 .content_wrapper.content .services .block{
   width: 100%;
   min-height: 200px;
-  padding: 38px 50px 31px;
+  padding: 25px 50px 0px;
   position: relative;
   background-color: white;
   border-bottom:40px solid gray ;
@@ -325,6 +328,7 @@ svg {
 
 .content_wrapper.content .contact_form_serv {
   padding: 15px 0 40px;
+  clear: both;
 }
 
 .content_wrapper.content .contact_form_serv h2 {

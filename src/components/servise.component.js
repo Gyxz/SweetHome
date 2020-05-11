@@ -38,13 +38,12 @@ function Service (props) {
    
     const renderItems = () => (
         
-             
-                <Col lg={3} md={4} xs={12}>
-                    <div className="service_block">
-                        <div className="service_block_name"><h4>{props.service.servicename}</h4></div>
-                        <InfoBlock products={props.service.type_service}/>
-                    </div>
-                </Col>
+            <div className="service_block">
+                <div className="service_block_name"><h4>{props.service.servicename}</h4></div>
+                <InfoBlock products={props.service.type_service}/>
+            </div>
+        
+                
            
         
          /* <Card border="dark" style={{ width: '18rem' }}>
@@ -57,9 +56,9 @@ function Service (props) {
         
     )
     return (
-        <Row gutter={[8, 8]}>
+        <div className="service_row">
             {renderItems()}   
-        </Row>
+        </div>
     )
     
 }
@@ -102,7 +101,9 @@ export default class ServiceList extends Component {
             <div className="content_wrapper content">
                 <div className="services">
                     <h2>  Ми виконуємо такі види робіт:  </h2>
-                    {this.serviceList()}
+
+                        {this.serviceList()}
+                    
                      {/* <Row gutter={[8, 8]}>
                         {this.serviceList()}
                     </Row> */}
