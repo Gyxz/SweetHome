@@ -420,7 +420,7 @@ svg {
     margin-left: 20px;
 }
 
-.content__wrapper.content .contact__form h2 {
+.content_wrapper.content .contact_form h2 {
   margin-bottom: 35px;
 }
 
@@ -496,3 +496,46 @@ svg {
   color: black;
 }
 
+.content_wrapper.content .worker {
+  padding: 0 0 45px;
+}
+
+.content_wrapper.content .worker h2 {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.content_wrapper.content .worker .worker_row .worker_block{
+  width: 360px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.content_wrapper.content .worker .worker_row .worker_block .worker_card{
+  width: 20rem;
+  height: 16rem;
+}
+
+.content_wrapper.content .worker .worker_row .worker_block .worker_card .worker_header{
+  background:linear-gradient(45deg, rgb(151, 30, 33), rgb(103, 14, 119));
+  color:white;
+  font-size: 22px;
+}
+
+/* .content_wrapper.content .worker .worker_row .worker_block .worker_card .worker_body{
+  
+  
+} */
+
+.content_wrapper.content .worker .worker_row .worker_block .worker_card .worker_body .worker_text .worker_text_body{
+  width: 280px;
+  height: 95px;
+}
+
+
+.content_wrapper.content .worker .worker_row .worker_block .worker_card .worker_body .worker_text{
+  color:black;
+  font-size: 17px;
+  
+}

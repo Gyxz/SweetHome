@@ -4,18 +4,23 @@ import {  Col, Row } from 'antd';
 import Card from 'react-bootstrap/Card'
 
 const Craftsman = props => (
-    <Col lg={6} md={8} xs={24}>
-        <Card border="dark" style={{ width: '18rem' }}>
-            <Card.Header>{props.craftsman.craftsman_name}</Card.Header>
-            <Card.Body hoverable={true}>
-                <Card.Title>Стаж: {props.craftsman.experience} р.</Card.Title>
-                <Card.Text>
-                    {props.craftsman.phone}
+    <div className="worker_block">
+        <Card border="dark" className="worker_card">
+            <Card.Header className="worker_header">{props.craftsman.craftsman_name}</Card.Header>
+            <Card.Body className="worker_body">
+                <Card.Title className="worker_title">Стаж роботи: {props.craftsman.experience} р.</Card.Title>
+                <Card.Text className="worker_text">
+                    <div className="worker_text_body">
+                        Професіонал у сфері:
+                    </div>
+                    <div className="worker_text_tel">
+                        Тел: {props.craftsman.phone}
+                    </div>
                 </Card.Text>
             </Card.Body>
         </Card>
-
-    </Col>
+    </div>
+    
   )
 
 export default class CraftsmanList extends Component {
@@ -44,19 +49,17 @@ export default class CraftsmanList extends Component {
 
   render() {
     return (
-        <div style={{ width: '75%', margin: '3rem auto' }}>
-            <div style={{ textAlign: 'center' }}>
-                <h2>  Наші майстри! </h2>
-            </div>
-                <div >
-                    <Row gutter={[9, 9]}>
-
-                        {this.craftsmanList()}
-
-                    </Row>
+        <div className="page_wrapper box">
+            <div className="content_wrapper content">
+                <div className="worker">
+                    <h2>  Наші майстри! </h2>
+                
+                    <div className="worker_row">
+                        {this.craftsmanList()}   
+                    </div>
                 </div>
+            </div>
         </div>
-
     );
   }
 }
