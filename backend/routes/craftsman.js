@@ -9,13 +9,16 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
   const craftsman_name = req.body.craftsman_name;
+  const description = req.body.description;
   const experience = Number(req.body.experience);
   const phone = req.body.phone;
   
   const newcraftsman = new Craftsman({
     craftsman_name,
+    description,
     experience,
     phone,
+    
   });
 
   newcraftsman.save()
@@ -39,6 +42,7 @@ router.route('/update/:id').post((req, res) => {
     Craftsman.findById(req.params.id)
     .then(craftsman => {
         craftsman.craftsman_name = req.body.craftsman_name;
+        craftsman.description = req.body.description;
         craftsman.experience = Number(req.body.experience);
         craftsman.phone = req.body.phone;
 

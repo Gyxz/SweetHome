@@ -10,6 +10,7 @@ craftsman_name: {
     trim: true,
     minlength: 3
   },
+  description:{type: String, required: true,trim: true,},
   experience:{type: Number, required: true,},
   phone:{type: String, required: true, pattern: "^\+?3?8?(0\d{9})$",maxLength: 7},
 }, {
