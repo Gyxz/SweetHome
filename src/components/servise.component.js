@@ -43,17 +43,13 @@ function Service (props) {
                 <InfoBlock products={props.service.type_service}/>
             </div>
         
-                
-           
-        
          /* <Card border="dark" style={{ width: '18rem' }}>
             <Card.Header><b>{props.service.servicename}</b></Card.Header>
             <ListGroup variant="flush">
                 <InfoBlock products={props.service.type_service}/>
             </ListGroup>
         </Card> */ 
-        
-        
+    
     )
     return (
         <div className="service_row">
@@ -124,7 +120,7 @@ export default class ServiceList extends Component {
                         <div className="form-group"> 
                             <input  type="text"
                                 required
-                                placeholder="Ваше телефон"
+                                placeholder="Ваш телефон"
                                 className="form-control"
                                 />
                         </div>
