@@ -11,7 +11,12 @@ const Craftsman = props => (
                 <Card.Title className="worker_title">Стаж роботи: {props.craftsman.experience} р.</Card.Title>
                 <Card.Text className="worker_text">
                     <div className="worker_text_body">
-                        Професіонал у сфері:
+                        <div style={{marginBottom:"5px"}}>
+                            Професіонал у сфері:
+                        </div>
+                        <div>
+                            {props.craftsman.description}
+                        </div>
                     </div>
                     <div className="worker_text_tel">
                         Тел: {props.craftsman.phone}
