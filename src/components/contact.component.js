@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 export default class Contact extends Component {
- 
+
+    resetForm(){
+        alert("Повідомлення надіслано!");
+        document.getElementById('contact-form').reset();
+    }
+
   
     render() {
       return (
@@ -48,9 +53,24 @@ export default class Contact extends Component {
                     </div>
                     <div className="col_c">
                         <div className="contact_form full">
-                                <h2>Наші контакти</h2>
-                                <div>
-                                </div>
+                                <h2>Напишіть шось нам!</h2>
+                            <div className="">
+                                <form id="contact-form" onSubmit={this.resetForm.bind()}>
+                                    <div className="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" className="form-control" id="name" required/>
+                                    </div>
+                                    <div className="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" required />
+                                    </div>
+                                    <div className="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea className="form-control" rows="5" id="message" required></textarea>
+                                    </div>
+                                    <button type="submit" className="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
                         </div>
                     
                     </div>
