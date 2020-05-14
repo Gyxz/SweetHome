@@ -347,14 +347,20 @@ svg {
 }
 
 .col_row {
-  width: 100%;
+  width: 1150px;
   float: left;
 }
 
-.col_c {
-  width: 50%;
+.col_contact {
   float: left;
   display: block;
+  padding-left: 50px;
+}
+
+.col_contact_form {
+  float: left;
+  display: block;
+  padding-left: 150px;
 }
 
 .content_wrapper.content .contact_block {
@@ -409,19 +415,40 @@ svg {
 .content_wrapper.content .contact_form.full {
     width: 100%;
     margin-left: 0;
-    padding: 50px 0 0 134px;
     margin-top: 80px;
 }
+
+.content_wrapper.content .contact_form.full h5{
+  text-align: left;
+  color:white;
+}
+
+.content_wrapper.content .contact_form.full .button_form{
+  float: right;
+}
+
+.content_wrapper.content .contact_form.full .button_form .button_form_btn{
+  border-radius: 12px;
+  font-size: 22px;
+  transition-duration: 0.4s;
+  background-color: black;
+  background:#911f22;
+  color: white;
+  border: 2px solid red;
+}
+
+.content_wrapper.content .contact_form.full .button_form .button_form_btn:hover{
+  background-color: white;
+  color: black;
+}
+
 .content_wrapper.content .contact_form {
     padding: 15px 0 40px;
-}
-.col_50 .contact_form {
-    float: left;
-    margin-left: 20px;
 }
 
 .content_wrapper.content .contact_form h2 {
   margin-bottom: 35px;
+  text-align: left;
 }
 
 .content_wrapper.content .contact_block .social .social_links {
@@ -523,10 +550,6 @@ svg {
   font-size: 22px;
 }
 
-/* .content_wrapper.content .worker .worker_row .worker_block .worker_card .worker_body{
-  
-  
-} */
 
 .content_wrapper.content .worker .worker_row .worker_block .worker_card .worker_body .worker_text .worker_text_body{
   width: 280px;

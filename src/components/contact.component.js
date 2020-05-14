@@ -10,9 +10,9 @@ export default class Contact extends Component {
     render() {
       return (
         <div className="page_wrapper box" >
-            <div className="content_wrapper content" style={{paddingRight:"200px"}}>
+            <div className="content_wrapper content" style={{paddingRight:"100px"}}>
                 <div className="col_row">
-                    <div className="col_c">
+                    <div className="col_contact">
                         <div className="contact_block">
                             <div className="contacts">
                                 <h3>Наші контакти</h3>
@@ -51,24 +51,26 @@ export default class Contact extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col_c">
+                    <div className="col_contact_form">
                         <div className="contact_form full">
                                 <h2>Напишіть шось нам!</h2>
-                            <div className="">
+                            <div style={{width:"400px"}}>
                                 <form id="contact-form" onSubmit={this.resetForm.bind()}>
                                     <div className="form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" className="form-control" id="name" required/>
+                                        <h5>Ваше ім'я</h5>
+                                        <input placeholder="Ім'я" type="text" className="form-control" id="name" style={{borderRight:"5px solid red"}} required/>
                                     </div>
                                     <div className="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" required />
+                                        <h5>Ваша пошта</h5>
+                                        <input placeholder="example@gmail.com" type="email" className="form-control" id="email" aria-describedby="emailHelp" style={{borderRight:"5px solid red"}} required />
                                     </div>
                                     <div className="form-group">
-                                        <label for="message">Message</label>
-                                        <textarea className="form-control" rows="5" id="message" required></textarea>
+                                        <h5 >Ваше запитання або побажання</h5>
+                                        <textarea placeholder="Тут ваші запитання і побажання" className="form-control" rows="7" id="message" style={{borderRight:"5px solid red",borderBottom:"5px solid red"}} required></textarea>
                                     </div>
-                                    <button type="submit" className="btn btn-primary">Submit</button>
+                                    <div className="button_form">
+                                        <button type="submit" className="btn btn-primary button_form_btn">Надіслати</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
