@@ -4,7 +4,7 @@ import {  Col, Row } from 'antd';
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import { Carousel } from "react-responsive-carousel";
-import Popup from './popup.component';  
+
 
 function InfoBlock(props) {
 
@@ -64,13 +64,9 @@ export default class ServiceList extends Component {
     constructor(props){
         super(props);
 
-        this.state = {services: [], showPopup: false};
+        this.state = {services: []};
     }
-      togglePopup() {  
-        this.setState({  
-             showPopup: !this.state.showPopup  
-        });  
-         } 
+      
 
     componentDidMount(){
         axios.get('http://localhost:5000/service/')
@@ -90,6 +86,12 @@ export default class ServiceList extends Component {
         })
       }
 
+    resetForm(){
+        alert("Заявка надіслана!");
+        document.getElementById('contact-form').reset();
+    }
+
+
 
   render() {
     return (
@@ -106,34 +108,21 @@ export default class ServiceList extends Component {
                 </div>
                 <div className="contact_form_serv">
                     <h2>Залишіть заявку і ми з вами зв’яжемось!</h2>
-                    <div style={{display: "flex",flexFlow:"row wrap"}}>
-                        <form style={{width: "30%"}}>
-                        <div className="form-group"> 
-                            <input  type="text"
-                                required
-                                placeholder="Ваше ім'я"
-                                className="form-control"
-                                />
-                        </div>
+                    <div style={{width:"500px"}}>
+                        <form id="contact-form" onSubmit={this.resetForm.bind()}>
+                            <div className="form_group_serv">
+                                <input placeholder="Ім'я" type="text" className="form-control" id="name" style={{borderRight:"5px solid red"}} required/>
+                            </div>
+                            <div className="form_group_serv">
+                                <input placeholder="example@gmail.com" type="email" className="form-control" id="email" aria-describedby="emailHelp" style={{borderRight:"5px solid red"}} required />
+                            </div> 
+                            <div className="form_group_serv">
+                                <input placeholder="+38(012)345678" type="tel" className="form-control" id="phone" pattern="^\+?3?8?(0\d{9})$" style={{borderRight:"5px solid red"}} required />
+                            </div>
+                            <div className="button_form_serv">
+                               <button type="submit" className="btn btn-danger button_form_btn_serv">Надіслати</button>
+                            </div>
                         </form>
-                        <form style={{width: "30%"}}>
-                        <div className="form-group"> 
-                            <input  type="text"
-                                required
-                                placeholder="Ваш телефон"
-                                className="form-control"
-                                />
-                        </div>
-                        </form>
-                        <button className="form_button" onClick={this.togglePopup.bind(this)}> Надіслати заявку</button> 
-                        {this.state.showPopup ?  
-                        <Popup  
-                                text='Ваша заявка успішно надіслана!'  
-                                closePopup={this.togglePopup.bind(this)}  
-                        />  
-                        : null  
-                        }  
-                        {/* <button className="form_button">Надіслати заявку</button> */}
                     </div>
                 </div>
             </div>

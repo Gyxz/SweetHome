@@ -8,7 +8,7 @@ import Home from "./components/home.component";
 import ServiceList from "./components/servise.component";
 import CraftsmanList from "./components/craftsman.component";
 import ContactList from "./components/contact.component";
-import Popup from './components/popup.component';  
+
 
 function App() {
   return (

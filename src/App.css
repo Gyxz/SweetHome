@@ -329,6 +329,7 @@ svg {
 .content_wrapper.content .contact_form_serv {
   padding: 15px 0 40px;
   clear: both;
+  
 }
 
 .content_wrapper.content .contact_form_serv h2 {
@@ -336,14 +337,29 @@ svg {
   text-align: left;
 }
 
-.content_wrapper.content .contact_form_serv .form-group {
+.content_wrapper.content .contact_form_serv .form_group_serv {
   margin-left: 20px;
+  margin-bottom: 15px;
 }
-.content_wrapper.content .contact_form_serv .form_button{
+.content_wrapper.content .contact_form_serv .button_form_serv{
   margin-left: 30px;
   height: 40px;
-  border-radius: .25rem;
   
+}
+
+.content_wrapper.content .contact_form_serv .button_form_serv .button_form_btn_serv{
+  border-radius: 12px;
+  font-size: 22px;
+  transition-duration: 0.4s;
+  background-color: black;
+  background:#911f22;
+  color: white;
+  border: 2px solid red;
+}
+
+.content_wrapper.content .contact_form_serv .button_form_serv .button_form_btn_serv:hover{
+  background-color: white;
+  color: black;
 }
 
 .col_row {
@@ -467,61 +483,6 @@ svg {
   transition: all .8s ease;
 }
 
-@keyframes popup_frame{
-  from {top: -100%;}
-  to {top: -10%;}
-}
-
-
-.popup {  
-  position: fixed;  
-  width: 100%;  
-  height: 100%;   
-  top:-10%;
-  left: 0;  
-  right: 0;  
-  bottom: 0;  
-  margin: auto;  
-  background-color: rgba(255, 255, 255, 0.6);  
-  background:linear-gradient(rgba(250,0,0,1),transparent);
-  animation: popup_frame 1s;
-
-}  
-
-
-.popup .popup_inner {  
-  position: absolute;  
-  left: 35%;  
-  right: 35%;  
-  top: 35%;  
-  bottom: 35%;  
-  margin: auto;  
-  border-radius: 20px;  
-  background:linear-gradient(rgba(250,0,0,1),transparent);
-  background-color:black;
-}
-
-.popup .popup_inner h1{
-  margin-top: 10%;
-  color:white;
-}
-
-.popup .popup_inner .popup_button{
-  border-radius: 12px;
-  font-size: 30px;
-  transition-duration: 0.4s;
-  background-color: black;
-  background:linear-gradient(rgba(155, 6, 6, 0.5),transparent);
-  color: white;
-  border: 2px solid red;
-  margin-top: 5%;
-  
-}
-
-.popup .popup_inner .popup_button:hover{
-  background-color: white;
-  color: black;
-}
 
 .content_wrapper.content .worker {
   padding: 0 0 45px;
