@@ -209,7 +209,8 @@ body {
 }
 
 .page_wrapper.box{
-  background: linear-gradient(to right, #343a40, gray);
+  /* background: linear-gradient(to right, #343a40, gray); */
+  background: linear-gradient(45deg, rgb(146, 55, 55) 20%, rgb(74, 42, 95) 100%);
 }
 
 .content_wrapper.content .feedback_block {
