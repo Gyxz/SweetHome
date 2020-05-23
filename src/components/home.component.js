@@ -90,23 +90,6 @@ export default class Home extends Component {
             <h2>Наші клієнти кажуть:</h2>
             <div id="disqus_thread"></div>
             
-
-            {/* <Carousel autoPlay infiniteLoop>
-              <div className="block">
-                <p className="feedback_text">hfghkjhgkhkghfghkjhgk
-                hkghkhgkhgdhfghk
-                </p>
-                  <h6>fdgkghkhfd</h6>
-              </div>
-              <div className="block">
-                <p className="feedback_text">hfdhfd</p>
-                <h6>fdhfd</h6>
-              </div>
-              <div className="block">
-                <p className="feedback_text">hfdhfd</p>
-                <h6>fdhfd</h6>
-              </div>
-            </Carousel> */}
           </div>
         </div>
        </div>
