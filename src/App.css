@@ -504,7 +504,7 @@ svg {
 
 .content_wrapper.content .worker .worker_row .worker_block .worker_card{
   width: 20rem;
-  height: 16rem;
+  height: 18rem;
   box-shadow: 10px 10px 18px -4px rgba(0,0,0,0.75);
 }
 
@@ -525,4 +525,8 @@ svg {
   color:black;
   font-size: 17px;
   
+}
+
+.content_wrapper.content .worker .worker_row .worker_block .worker_card .worker_body .worker_text .worker_text_rating{
+ margin-top: 10px;
 }

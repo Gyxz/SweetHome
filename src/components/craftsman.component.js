@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import {  Col, Row } from 'antd';
 import Card from 'react-bootstrap/Card'
+import Rating from '@material-ui/lab/Rating';
+
+
 
 const Craftsman = props => (
     <div className="worker_block">
@@ -20,6 +23,14 @@ const Craftsman = props => (
                     </div>
                     <div className="worker_text_tel">
                         Тел: {props.craftsman.phone}
+                    </div>
+                    <div className="worker_text_rating">
+                    <Rating
+                        name="half-rating-read"
+                        value={props.craftsman.rating}
+                        
+                        readOnly
+                    />
                     </div>
                 </Card.Text>
             </Card.Body>
