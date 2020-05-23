@@ -63,15 +63,19 @@ function Service (props) {
 export default class ServiceList extends Component {
     constructor(props){
         super(props);
-
-        this.state = {services: []};
+        this.onChangeservicename = this.onChangeservicename.bind(this);
+        this.state = {servicename:'',services: [],services_drop:[]};
     }
       
 
     componentDidMount(){
         axios.get('http://localhost:5000/service/')
             .then(res =>{
-                this.setState({services: res.data})
+                this.setState({
+                    services: res.data,
+                    services_drop: res.data.map(service => service.servicename),
+                    servicename: res.data[0].servicename
+                })
                 
             })
             .catch((error) => {
@@ -91,7 +95,11 @@ export default class ServiceList extends Component {
         document.getElementById('contact-form').reset();
     }
 
-
+    onChangeservicename(e) {
+        this.setState({
+            servicename: e.target.value
+        })
+      }
 
   render() {
     return (
@@ -112,6 +120,23 @@ export default class ServiceList extends Component {
                         <form id="contact-form" onSubmit={this.resetForm.bind()}>
                             <div className="form_group_serv">
                                 <input placeholder="Ім'я" type="text" className="form-control" id="name" style={{borderRight:"5px solid red"}} required/>
+                            </div>
+                            <div className="form_group_serv">
+                                <select ref="userInput"
+                                    required
+                                    className="form-control"
+                                    value={this.state.servicename}
+                                    onChange={this.onChangeservicename}
+                                    style={{borderRight:"5px solid red"}}>
+                                    {
+                                        this.state.services_drop.map(function(service) {
+                                        return <option 
+                                            key={service}
+                                            value={service}>{service}
+                                            </option>;
+                                        })
+                                    }
+                                </select>
                             </div>
                             <div className="form_group_serv">
                                 <input placeholder="example@gmail.com" type="email" className="form-control" id="email" aria-describedby="emailHelp" style={{borderRight:"5px solid red"}} required />
