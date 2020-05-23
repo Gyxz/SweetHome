@@ -12,12 +12,14 @@ router.route('/add').post((req, res) => {
   const description = req.body.description;
   const experience = Number(req.body.experience);
   const phone = req.body.phone;
-  
+  const rating = Number(req.body.rating);
+
   const newcraftsman = new Craftsman({
     craftsman_name,
     description,
     experience,
     phone,
+    rating,
     
   });
 
@@ -45,7 +47,8 @@ router.route('/update/:id').post((req, res) => {
         craftsman.description = req.body.description;
         craftsman.experience = Number(req.body.experience);
         craftsman.phone = req.body.phone;
-
+        craftsman.rating = Number(req.body.rating);
+        
         craftsman.save()
         .then(() => res.json('craftsman updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
