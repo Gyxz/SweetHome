@@ -19,11 +19,8 @@ connection.once('open', () => {
 
  const craftsmanRouter = require('./routes/craftsman');
  const serviceRouter = require('./routes/service');
- const type_serviceRouter = require('./routes/type_service');
-
  app.use('/craftsman', craftsmanRouter);
  app.use('/service', serviceRouter);
- app.use('/type_service', type_serviceRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
