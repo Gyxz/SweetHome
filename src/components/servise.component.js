@@ -1,29 +1,16 @@
 import React, {Component} from 'react';
 import axios from 'axios'
-import {  Col, Row } from 'antd';
-import Card from 'react-bootstrap/Card'
-import ListGroup from 'react-bootstrap/ListGroup'
+
 import { Carousel } from "react-responsive-carousel";
 
 
 function InfoBlock(props) {
-
         const renderItems = () => (
             props.products && props.products.map(item => (
-                
                 <div className="block">
                     <p className="info_text"><b>{item.type_service_name} </b></p>
                     <h6>Середня ціна: {item.price} грн.</h6>
                 </div>
-                
-                // <ListGroup.Item>
-                //     <div>
-                //         {item.type_service_name}
-                //     </div>
-                //     <div>
-                //       Середня ціна: {item.price} грн.
-                //     </div>
-                // </ListGroup.Item>
             ))
         )
         return (
@@ -37,26 +24,16 @@ function InfoBlock(props) {
 function Service (props) {
    
     const renderItems = () => (
-        
-            <div className="service_block">
-                <div className="service_block_name"><h4>{props.service.servicename}</h4></div>
-                <InfoBlock products={props.service.type_service}/>
-            </div>
-        
-         /* <Card border="dark" style={{ width: '18rem' }}>
-            <Card.Header><b>{props.service.servicename}</b></Card.Header>
-            <ListGroup variant="flush">
-                <InfoBlock products={props.service.type_service}/>
-            </ListGroup>
-        </Card> */ 
-    
+        <div className="service_block">
+            <div className="service_block_name"><h4>{props.service.servicename}</h4></div>
+            <InfoBlock products={props.service.type_service}/>
+        </div>
     )
     return (
         <div className="service_row">
             {renderItems()}   
         </div>
-    )
-    
+    )  
 }
   
 
@@ -67,8 +44,7 @@ export default class ServiceList extends Component {
         this.state = {servicename:'',services: [],services_drop:[]};
     }
       
-
-    componentDidMount(){
+    componentDidMount(){        //зчитуються зані з бд
         axios.get('http://localhost:5000/service/')
             .then(res =>{
                 this.setState({
@@ -84,7 +60,7 @@ export default class ServiceList extends Component {
             
     }
 
-    serviceList() {
+    serviceList() {        
         return this.state.services.map(currentservice => {
           return <Service service={currentservice} />;
         })
@@ -108,11 +84,7 @@ export default class ServiceList extends Component {
                 <div className="services">
                     <h2>  Ми виконуємо такі види робіт:  </h2>
 
-                        {this.serviceList()}
-                    
-                     {/* <Row gutter={[8, 8]}>
-                        {this.serviceList()}
-                    </Row> */}
+                    {this.serviceList()}
                 </div>
                 <div className="contact_form_serv">
                     <h2>Залишіть заявку і ми з вами зв’яжемось!</h2>

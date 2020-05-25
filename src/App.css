@@ -189,7 +189,7 @@ body {
 .content_wrapper.content p {
   font-weight: 300;
   line-height: 25px;
-  font-size: 16px;
+  font-size: 20px;
   color: #FFF;
 }
 
@@ -259,6 +259,7 @@ body {
 .content_wrapper.content .benefits_block ul li h6 {
   padding-left: 45px;
   margin-bottom: 0;
+  font-size: 20px;
 }
 
 svg {

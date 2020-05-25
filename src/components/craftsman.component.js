@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card'
 import Rating from '@material-ui/lab/Rating';
 
 
-
 const Craftsman = props => (
     <div className="worker_block">
         <Card border="dark" className="worker_card">
@@ -28,7 +27,6 @@ const Craftsman = props => (
                     <Rating
                         name="half-rating-read"
                         value={props.craftsman.rating}
-                        
                         readOnly
                     />
                     </div>
@@ -36,7 +34,6 @@ const Craftsman = props => (
             </Card.Body>
         </Card>
     </div>
-    
   )
 
 export default class CraftsmanList extends Component {
